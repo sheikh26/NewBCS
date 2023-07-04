@@ -1,0 +1,137 @@
+.common_table_class1 {
+	width=100%;
+	background-color: #439ecd;
+	border-left: 1px thin;
+	border-right: 1px thin;
+	border-bottom: 1px thin;
+	border-top: 1px thin;
+	border-color: #000000;
+	font-family: Arial;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	vertical-align: middle;
+}
+.common_table_class_caption 
+{
+	background-color:#439ecd;
+	border-color: #FFF;
+	border-style:None;
+	color: #000;
+	text-align: center;
+	font-family: Arial;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+.common_table_class th {
+	background: #f1f1f1;
+	text-align: center;
+	font-weight: normal;
+	border-left: 1px solid;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	padding: 2px;
+}
+.common_table_class td {
+	BORDER-BOTTOM-COLOR: #000000;
+	BORDER-BOTTOM: 1px solid;
+	TEXT-ALIGN: center;
+	BORDER-LEFT: 1px solid;
+	PADDING-BOTTOM: 2px;
+	PADDING-LEFT: 2px;
+	PADDING-RIGHT: 2px;
+	BACKGROUND: #ffffff;
+	BORDER-TOP: 1px solid;
+	FONT-WEIGHT: normal;
+	BORDER-RIGHT: 1px solid;
+	PADDING-TOP: 2px
+}
+.main-heading {
+	
+	font-family: Arial;
+	font-size: 15px;
+	color: #f47920;
+	font-weight: bold;
+}
+
+
+.border_chart
+	{
+	border:solid 1px #999999;	
+	}
+
+table.stdlist1{
+	border-collapse:collapse;
+}	
+.stdlist1 th
+	{
+	border-bottom:solid 1px #999999;
+	border-right:solid 1px #999999;
+	border-collapse:collapse;
+	background: #fff url(../images/grey_bg.png) repeat-x bottom left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	height:25px;
+	text-align:center;
+	font-weight:bold;	
+	}
+	
+.stdlistColumn td
+	{
+	border-bottom:solid 1px #999999;
+	border-right:solid 1px #999999;
+	border-collapse:collapse;
+	background:#fff url(../images/grey_bg.png) repeat-x bottom left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	height:25px;
+	text-align:center;
+	font-weight:bold;	
+	}	
+			
+tr.odd td
+	{
+	border:solid 1px #999999;
+	border-collapse:collapse;
+	background-color:#fff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:center;
+	padding: 5px 0px;	
+	}	
+
+tr.even td
+	{
+	border:solid 1px #999999;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:center;
+	padding: 5px 0px;
+	}
+	a.previous:link,a.previous:visited
+	{
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+	color:#006599;
+	text-decoration:none;
+	}
+	
+	
+	.main-heading {
+	
+	font-family: Arial;
+	font-size: 12px;
+	color: #0000FF;
+	font-weight: bold;
+}
+
+
+
+
+
+		

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.strutsLogin.dto">
+	<class name="EmployeeMasterDTO" table="EmpMasterTbl">
+		<id name="empId" column="EmpId">
+			<generator class="increment"></generator>
+		</id>
+		
+		
+		<property name="peopleSoftId" column="PeopleSoftId"/>
+		<property name="firstName" column="FirstName"/>
+		<property name="lastName" column="LastName"/>
+		<property name="country" column="Country"/>
+		<property name="businessUnitId" column="BunitId"/>
+		<property name="planId" column="PlanId"/>
+		<property name="peopleSoftJobGrade" column="PeopleSoftJobGrade"/>
+		<property name="levarageGrade" column="LeverageGrade"/>
+		<property name="baseSalaryAnnual" column="BaseSalaryAnnual"/>
+		<property name="managerId" column="ManagerId"/>
+		<property name="designation" column="Designation"/>
+		<property name="dateOfJoin" column="DateOfJoin"  />
+		<property name="dateOfEnroll" column="DateOfEnrolment" /> 
+		<property name="dateOfExit" column="DateofExit" />
+		<property name="oaipBonus" column="OaipBonus" />
+		
+</class>
+
+ 
+</hibernate-mapping>

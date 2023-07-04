@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+	<formset>
+	<!-- validation for EmployeeMaster Form -->	
+		<form name="employeeMasterForm">
+        
+        <field property="peopleSoftId" depends="required">
+            <arg key="employeeMaster.peopleSoftId" />
+        </field>
+        <field property="firstName" depends="required">
+            <arg key="employeeMaster.firstName" />
+        </field>
+        <field property="lastName" depends="required">
+            <arg key="employeeMaster.lastName" />
+        </field>
+        <field property="country" depends="required">
+            <arg key="employeeMaster.country" />
+        </field>
+        <field property="businessUnitId" depends="required,integer">
+            <arg key="employeeMaster.businessUnitId" />
+        </field>
+        <field property="planId" depends="required,integer">
+            <arg key="employeeMaster.planId" />
+        </field>
+       
+        <field property="levarageGrade" depends="required,integer">
+            <arg key="employeeMaster.levarageGrade" />
+        </field>
+        <field property="baseSalaryAnnual" depends="required,integer">
+            <arg key="employeeMaster.baseSalaryAnnual" />
+        </field>
+		
+		 <field property="managerId" depends="required">
+            <arg key="employeeMaster.managerId" />
+        </field>
+        
+             <field property="dateOfJoin" depends="required">
+				<arg key="employeeMaster.dateOfJoin" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>dd-MM-yy</var-value>
+				</var>
+			</field>
+			
+			
+
+
+
+
+			
+		</form>
+	</formset>
+	
+	<formset>
+	<!-- validation for Plan Form -->
+	
+		<form name="planMasterForm">
+		
+        <field property="businessUnit1Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit1Perf" />
+        </field>
+        <field property="businessUnit1Mertic1Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit1Mertic1Perf" />
+        </field>
+        <field property="businessUnit1Mertic2Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit1Mertic2Perf" />
+        </field>
+        <field property="businessUnit1Mertic3Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit1Mertic3Perf" />
+        </field>
+        <field property="businessUnit2Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit2Perf" />
+        </field>
+        <field property="businessUnit2Mertic1Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit2Mertic1Perf" />
+        </field>
+        <field property="businessUnit2Mertic2Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit2Mertic2Perf" />
+        </field>
+		
+		 <field property="businessUnit2Mertic3Perf" depends="required,integer">
+            <arg key="planMaster.businessUnit2Mertic3Perf" />
+        </field>
+        
+
+
+
+
+			
+		</form>
+	</formset>
+	
+	
+	
+	<formset>
+	<!-- validation for Levarage Form -->	
+		<form name="lavarageForm">
+		
+		
+        
+        
+        
+        <field property="businessUnitId" depends="required,integer">
+            <arg key="lavarage.businessUnitId" />
+        </field>
+        <field property="gradeName" depends="required">
+            <arg key="lavarage.gradeName" />
+        </field>
+        <field property="countryId" depends="required,integer">
+            <arg key="lavarage.countryId" />
+        </field>
+        <field property="leveragePerc" depends="required,integer">
+            <arg key="lavarage.leveragePerc" />
+       </field>
+
+			
+		</form>
+	</formset>
+	
+	
+	
+	<formset>
+	<!-- validation for Country Form -->	
+		<form name="countryMasterForm">
+		
+		
+        
+        
+        
+        <field property="countryName" depends="required">
+            <arg key="countryMaster.countryName" />
+        </field>
+        
+
+			
+		</form>
+	</formset>
+	
+	
+	<formset>
+	<!-- validation for Country Form -->	
+		<form name="businessUnitMasterForm">
+		
+		
+        
+        
+        
+        <field property="businessUnitName" depends="required">
+            <arg key="businessUnitMaster.businessUnitName" />
+        </field>
+        
+       
+
+			
+		</form>
+	</formset>
+	
+	
+	
+	<formset>
+	<!-- validation for Plan Form -->	
+		<form name="businessPerfPlanForm">
+		
+      
+        <field property="buYear" depends="required,integer">
+            <arg key="businessPerfPlan.buYear" />
+        </field>
+       
+      
+        <field property="metric1PlanValue" depends="required,integer">
+            <arg key="businessPerfPlan.metric1PlanValue" />
+        </field>
+       
+        <field property="metric2PlanValue" depends="required,integer">
+            <arg key="businessPerfPlan.metric2PlanValue" />
+        </field>
+		
+		
+        
+        <field property="metric3PlanValue" depends="required,integer">
+            <arg key="businessPerfPlan.metric3PlanValue" />
+        </field>
+        
+        
+        
+
+
+
+
+			
+		</form>
+	</formset>
+	
+	
+	<formset>
+	<!-- validation for Plan Form -->	
+		<form name="businessPerfActualForm">
+		
+		
+        <field property="buYear" depends="required,integer">
+            <arg key="businessPerfActual.buYear" />
+        </field>
+        <field property="buMonth" depends="required,integer">
+            <arg key="businessPerfActual.buMonth" />
+        </field>
+      
+        <field property="metric1PlanValue" depends="required,integer">
+            <arg key="businessPerfActual.metric1PlanValue" />
+        </field>
+       
+        <field property="metric2PlanValue" depends="required,integer">
+            <arg key="businessPerfActual.metric2PlanValue" />
+        </field>
+		
+		
+        
+        <field property="metric3PlanValue" depends="required,integer">
+            <arg key="businessPerfActual.metric3PlanValue" />
+        </field>
+        
+        
+			
+		</form>
+	</formset>
+	<formset>
+	<!-- validation for Plan Form -->	
+		<form name="oaipListForm">
+		
+		
+        
+        
+        <field property="year" depends="required,integer">
+            <arg key="displayOaipList.year" />
+        </field>
+        <field property="month" depends="required,integer">
+            <arg key="displayOaipList.month" />
+        </field>
+	
+	</form>
+	</formset>
+</form-validation>

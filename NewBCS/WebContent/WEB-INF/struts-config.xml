@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources></data-sources>
+  <form-beans>
+  <form-bean name="userForm" type="com.strutsLogin.form.UserForm"></form-bean>
+ <form-bean name="checkForm" type="com.strutsLogin.form.CheckForm"></form-bean>
+ 
+		<form-bean name="employeeMasterForm" type="com.strutsLogin.form.EmployeeMasterForm" ></form-bean>
+		<form-bean name="employeeMasterListForm" type="com.strutsLogin.form.EmployeeMasterListForm" ></form-bean>
+		
+		<form-bean name="planMasterForm" type="com.strutsLogin.form.PlanMasterForm" />
+		<form-bean name="planMasterListForm" type="com.strutsLogin.form.PlanMasterListForm" />
+		<form-bean name="lavarageForm" type="com.strutsLogin.form.LavarageForm" />
+		<form-bean name="lavarageListForm" type="com.strutsLogin.form.LavarageListForm" />
+		
+		<form-bean name="countryMasterForm" type="com.strutsLogin.form.CountryMasterForm" />
+
+		<form-bean name="countryMasterListForm" type="com.strutsLogin.form.CountryMasterListForm" />
+		
+		<form-bean name="businessUnitMasterForm" type="com.strutsLogin.form.BusinessUnitMasterForm" />
+
+		<form-bean name="businessUnitMasterListForm" type="com.strutsLogin.form.BusinessUnitMasterListForm" />
+		
+		<form-bean name="businessPerfPlanForm" type="com.strutsLogin.form.BusinessPerfPlanForm" />
+
+		<form-bean name="businessPerfPlanListForm" type="com.strutsLogin.form.BusinessPerfPlanListForm" />
+		
+		<form-bean name="businessPerfActualForm" type="com.strutsLogin.form.BusinessPerfActualForm" />
+
+		<form-bean name="businessPerfActualListForm" type="com.strutsLogin.form.BusinessPerfActualListForm" />
+		
+		<form-bean name="oaipForm" type="com.strutsLogin.form.OaipForm" />
+		<form-bean name="oaipListForm" type="com.strutsLogin.form.OaipListForm" />
+		
+		<form-bean name="uploadExel" type="com.strutsLogin.form.UploadExelForm" />
+		
+		
+		<form-bean name="oaipListYearlyForm" type="com.strutsLogin.form.OaipListYearlyForm" />
+		
+		
+		
+		<form-bean name="employeePerformanceForm" type="com.strutsLogin.form.EmployeePerformanceForm" ></form-bean>
+		<form-bean name="employeePerfListForm" type="com.strutsLogin.form.EmployeePerfListForm" ></form-bean>
+ 		
+ 		<!-- Aamir Start Tag-->
+ 		<form-bean name="FileExcelUploadForm" type="com.strutsLogin.form.FileExcelUploadForm"></form-bean>
+ 		<!-- Aamir End Tag-->
+  </form-beans>
+  <global-exceptions></global-exceptions> 
+  <global-forwards></global-forwards>
+  <action-mappings>
+  		
+  		<action input="/UploadFile.jsp" path="/fileUploadAction" name="FileExcelUploadForm" scope="session"	
+  				type="com.strutsLogin.action.UploadFileAction">
+			<forward name="success" path="/SuccessUpload.jsp" />
+		</action>
+  
+         <action path="/displayUser" name="userForm" validate="false"
+			scope="request" type="com.strutsLogin.action.UserInfoAction">
+			<forward name="Success" path="/UserInfo.jsp"></forward>
+		</action>
+		<action path="/user" name="userForm" validate="false"
+			scope="request" type="com.strutsLogin.action.UserInfoAction">
+			<forward name="success" path="/Success.jsp"></forward>
+			<forward name="fail" path="/Failer.jsp"></forward>
+		</action>
+		
+		<action path="/displayCheck"  type="com.strutsLogin.login.action.LoginAction" name="checkForm" validate="false"
+		scope="request" >
+		<forward name="Cheked" path="/Login.jsp"></forward>
+		</action>
+		
+		<action path="/check"  attribute="checkForm"  input="/Login.jsp"
+		 name="checkForm" scope="request" validate="true"
+		 type="com.strutsLogin.login.action.LoginAction">
+		<forward name="success" path="/treePage.jsp"></forward>
+		<forward name="Login" path="/Login.jsp"></forward>
+		</action>
+		
+		
+		<action path="/displayEmployeeMaster" name="employeeMasterForm" validate="false"
+			scope="request" type="com.strutsLogin.action.EmployeeMasterAction">
+			<forward name="Success" path="/EmployeeMaster.jsp" />
+		</action>
+
+		<action path="/employeeMaster" name="employeeMasterForm" validate="true"
+			scope="request" input="/EmployeeMaster.jsp" type="com.strutsLogin.action.EmployeeMasterAction">
+			<forward name="Success" path="/displayEmployeeMasterList.do" />
+			<forward name="Fail" path="/EmployeeMaster.jsp" />
+			<forward name="EmployeeMasterList" path="/displayEmployeeMasterList.do" />
+		</action>
+
+		<action path="/displayEmployeeMasterList" name="employeeMasterListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.EmployeeMasterListAction">
+			<forward name="Success" path="/EmployeeMasterList.jsp" />
+		</action>
+		
+		<action path="/employeeMasterList" name="employeeMasterForm"
+			validate="false" scope="request" input="/EmployeeMasterList.jsp"
+			type="com.strutsLogin.action.EmployeeMasterListAction">
+			<forward name="Success" path="/displayEmployeeMasterList.do" />
+		</action>
+		
+		
+		
+		<action path="/displayPlanMaster" name="planMasterForm" validate="false"
+			scope="request" type="com.strutsLogin.action.PlanMasterAction">
+			<forward name="Success" path="/PlanMaster.jsp" />
+		</action>
+		
+		<action path="/planMaster" name="planMasterForm" validate="true"
+			scope="request" input="/PlanMaster.jsp" type="com.strutsLogin.action.PlanMasterAction">
+			<forward name="Success" path="/displayPlanMasterList.do" />
+			<forward name="Fail" path="/PlanMaster.jsp" />
+			<forward name="PlanMasterList" path="/displayPlanMasterList.do" />
+		</action>
+		
+				
+		<action path="/displayPlanMasterList" name="planMasterListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.PlanMasterListAction">
+			<forward name="Success" path="/PlanMasterList.jsp" />
+		</action>
+		
+		
+		<action path="/planMasterList" name="planMasterForm"
+			validate="false" scope="request" input="/PlanMasterList.jsp"
+			type="com.strutsLogin.action.PlanMasterListAction">
+			<forward name="Success" path="/displayPlanMasterList.do" />
+		</action>
+		
+		
+		
+		<action path="/displayLavarage" name="lavarageForm" validate="false"
+			scope="request" type="com.strutsLogin.action.LavarageAction">
+			<forward name="Success" path="/Lavarage.jsp" />
+		</action>
+
+		<action path="/lavarage" name="lavarageForm" validate="true"
+			scope="request" input="/Lavarage.jsp" type="com.strutsLogin.action.LavarageAction">
+			<forward name="Success" path="/displayLavarageList.do" />
+			<forward name="Fail" path="/Lavarage.jsp" />
+			<forward name="LavarageList" path="/displayLavarageList.do" />
+		</action>
+
+		<action path="/displayLavarageList" name="lavarageListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.LavarageListAction">
+			<forward name="Success" path="/LavarageList.jsp" />
+		</action>
+
+		<action path="/lavarageList" name="lavarageForm"
+			validate="false" scope="request" input="/LavarageList.jsp"
+			type="com.strutsLogin.action.LavarageListAction">
+			<forward name="Success" path="/displayLavarageList.do" />
+		</action>
+		
+		
+		<action path="/displayCountryMaster" name="countryMasterForm" validate="false"
+			scope="request" type="com.strutsLogin.action.CountryMasterAction">
+			<forward name="Success" path="/CountryMaster.jsp" />
+		</action>
+
+		<action path="/countryMaster" name="countryMasterForm" validate="true"
+			scope="request" input="/CountryMaster.jsp" type="com.strutsLogin.action.CountryMasterAction">
+			<forward name="Success" path="/displayCountryMasterList.do" />
+			<forward name="Fail" path="/CountryMaster.jsp" />
+			<forward name="CountryMasterList" path="/displayCountryMasterList.do" />
+		</action>
+
+		<action path="/displayCountryMasterList" name="countryMasterListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.CountryMasterListAction">
+			<forward name="Success" path="/CountryMasterList.jsp" />
+		</action>
+
+		<action path="/countryMasterList" name="countryMasterForm"
+			validate="false" scope="request" input="/CountryMasterList.jsp"
+			type="com.strutsLogin.action.CountryMasterListAction">
+			<forward name="Success" path="/displayCountryMasterList.do" />
+		</action>
+		
+		<action path="/displayBusinessUnitMaster" name="businessUnitMasterForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessUnitMasterAction">
+			<forward name="Success" path="/BusinessUnitMaster.jsp" />
+		</action>
+
+		<action path="/businessUnitMaster" name="businessUnitMasterForm" validate="true"
+			scope="request" input="/BusinessUnitMaster.jsp" type="com.strutsLogin.action.BusinessUnitMasterAction">
+			<forward name="Success" path="/displayBusinessUnitMasterList.do" />
+			<forward name="Fail" path="/BusinessUnitMaster.jsp" />
+			<forward name="BusinessUnitMasterList" path="/displayBusinessUnitMasterList.do" />
+		</action>
+
+		<action path="/displayBusinessUnitMasterList" name="businessUnitMasterListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessUnitMasterListAction">
+			<forward name="Success" path="/BusinessUnitMasterList.jsp" />
+		</action>
+
+		<action path="/businessUnitMasterList" name="businessUnitMasterForm"
+			validate="false" scope="request" input="/BusinessUnitMasterList.jsp"
+			type="com.strutsLogin.action.BusinessUnitMasterListAction">
+			<forward name="Success" path="/displayBusinessUnitMasterList.do" />
+		</action>
+		
+		
+		<action path="/displayBusinessPerfPlan" name="businessPerfPlanForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfPlanAction">
+			<forward name="Success" path="/BusinessPerfPlan.jsp" />
+		</action>
+
+		<action path="/businessPerfPlan" name="businessPerfPlanForm" validate="true"
+			scope="request" input="/BusinessPerfPlan.jsp" type="com.strutsLogin.action.BusinessPerfPlanAction">
+			<forward name="Success" path="/displayBusinessPerfPlanList.do" />
+			<forward name="Fail" path="/BusinessPerfPlan.jsp" />
+			<forward name="BusinessPerfPlanList" path="/displayBusinessPerfPlanList.do" />
+		</action>
+
+		<action path="/displayBusinessPerfPlanList" name="businessPerfPlanListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfPlanListAction">
+			<forward name="Success" path="/BusinessPerfPlanProc.jsp" />
+		</action>
+
+		<action path="/businessPerfPlanList" name="businessPerfPlanListForm"
+			validate="false" scope="request" input="/BusinessPerfPlanProc.jsp"
+			type="com.strutsLogin.action.BusinessPerfPlanListAction">
+			<forward name="Success" path="/displayBusinessPerfPlanList.do" />
+		</action>
+		
+		<action path="/displayBusinessPerfActual" name="businessPerfActualForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfActualAction">
+			<forward name="Success" path="/BusinessPerfActual.jsp" />
+		</action> 
+
+		<action path="/businessPerfActual" name="businessPerfActualForm" validate="true"
+			scope="request" input="/BusinessPerfActual.jsp" type="com.strutsLogin.action.BusinessPerfActualAction">
+			<forward name="Success" path="/displayBusinessPerfActualList.do" />
+			<forward name="Fail" path="/BusinessPerfActual.jsp" />
+			<forward name="BusinessPerfActualList" path="/displayBusinessPerfActualList.do" />
+		</action>
+
+		<action path="/displayBusinessPerfActualList" name="businessPerfActualListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfActualListAction">
+			<forward name="Success" path="/BusinessPerfPlanActualProc.jsp" />
+		</action>
+
+		<action path="/businessPerfActualList" name="businessPerfActualListForm"
+			validate="false" scope="request" input="/BusinessPerfPlanActualProc.jsp"
+			type="com.strutsLogin.action.BusinessPerfActualListAction">
+			<forward name="Success" path="/displayBusinessPerfActualList.do" />
+		</action>
+		
+		
+		
+		<!-- Display Mappings -->
+		
+		<action path="/displayOaipList" name="oaipListForm" validate="true"
+			scope="request" type="com.strutsLogin.action.OaipListAction">
+			<forward name="Success" path="/Oaip.jsp" />
+		</action>
+		
+		
+		
+		<action path="/oaipList" name="oaipListForm" 
+			validate="false" scope="request" input="/Oaip.jsp"
+			type="com.strutsLogin.action.OaipListAction">
+			<forward name="Success" path="/displayOaipList.do" />
+		</action>
+		
+		<!-- Display Mappings -->
+		
+		<action path="/displayOaipListYearly" name="oaipListYearlyForm" validate="false"
+			scope="request" type="com.strutsLogin.action.OaipListActionYearly">
+			<forward name="Success" path="/OaipYearly.jsp" />
+		</action>
+		
+		
+		<!--  -->
+		
+		
+		<action path="/oaipListYearly" name="oaipListYearlyForm" 
+			validate="false" scope="request" input="/OaipYearly.jsp"
+			type="com.strutsLogin.action.OaipListActionYearly">
+			<forward name="Success" path="/displayOaipListYearly.do" />
+		</action>
+		
+		
+		
+		
+		<!-- Display Mappings -->
+		
+		<action path="/displayBusinessProc" name="businessPerfPlanListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfPlanListAction">
+			<forward name="Success" path="/BusinessPerfPlanProc.jsp" />
+		</action>
+		
+		
+		<!-- Submit -->
+		
+		
+		<action path="/oaipListBusinessProc" name="businessPerfPlanListForm" 
+			validate="false" scope="request" input="/BusinessPerfPlanProc.jsp"
+			type="com.strutsLogin.action.BusinessPerfPlanListAction">
+			<forward name="Success" path="/displayBusinessProc.do" />
+		</action>
+		
+		
+		<!-- Display Mappings -->
+		
+		<action path="/displayBusinessActualProc" name="businessPerfActualListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.BusinessPerfActualListAction">
+			<forward name="Success" path="/BusinessPerfPlanActualProc.jsp" />
+		</action>
+		
+		
+		<!-- Submit -->
+		
+		
+		<action path="/oaipListBusinessActualProc" name="businessPerfActualListForm" 
+			validate="false" scope="request" input="/BusinessPerfPlanActualProc.jsp"
+			type="com.strutsLogin.action.BusinessPerfActualListAction">
+			<forward name="Success" path="/displayBusinessActualProc.do" />
+		</action>
+		
+		
+		<!-- Display Mappings -->
+		
+		<action path="/displayEmployeePerfProc" name="employeePerfListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.EmployeePerfListAction">
+			<forward name="Success" path="/EmployeePerfProc.jsp" />
+		</action>
+		
+		
+		<!-- Submit -->
+		
+		
+		<action path="/employeePerfProc" name="employeePerfListForm" 
+			validate="false" scope="request" input="/EmployeePerfProc.jsp"
+			type="com.strutsLogin.action.EmployeePerfListAction">
+			<forward name="Success" path="/displayEmployeePerfProc.do" />
+		</action>
+		
+		
+		
+		
+		<action path="/displayEmployeePerf" name="employeePerformanceForm" validate="false"
+			scope="request" type="com.strutsLogin.action.EmployeePerformanceAction">
+			<forward name="Success" path="/EmployeePerfForm.jsp" />
+		</action>
+
+		<action path="/employeePerf" name="employeePerformanceForm" validate="false"
+			scope="request" input="/EmployeePerfProc.jsp" type="com.strutsLogin.action.EmployeePerformanceAction">
+			<forward name="Success" path="/displayEmployeePerfList.do" />
+			<forward name="Fail" path="/EmployeePerfForm.jsp" />
+			<forward name="EmployeePerfList" path="/displayEmployeePerfList.do" />
+		</action>
+
+		<action path="/displayEmployeePerfList" name="employeePerfListForm" validate="false"
+			scope="request" type="com.strutsLogin.action.EmployeePerfListAction">
+			<forward name="Success" path="/EmployeePerfProc.jsp" />
+		</action>
+		
+		<action path="/employeePerfList" name="employeePerfListForm"
+			validate="false" scope="request" input="/EmployeePerfProc.jsp"
+			type="com.strutsLogin.action.EmployeePerfListAction">
+			<forward name="Success" path="/displayEmployeePerfList.do" />
+		</action>
+		
+
+		
+		
+		<!-- Display Mappings for upload exel-->
+		
+		<action path="/displayExel" name="uploadExel" validate="false"
+			scope="request" type="com.strutsLogin.action.UploadExelAction">
+			<forward name="Success" path="/UploadExel.jsp" />
+		</action>
+		
+		
+		
+		
+		
+  </action-mappings>
+  
+  
+  <message-resources parameter="com.strutsLogin.resource.ApplicationResources" />
+  
+  
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+	
+	<plug-in className="com.strutsLogin.plugins.PreLoadedData"></plug-in>
+	
+</struts-config>
+
