@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.strutsLogin.dto">
+	<class name="BusinessPerfPlanDTO" table="BusinessPerformancePlanTbl">
+		<id name="buPerfPlanId" column="BusinessPerfPlanid">
+			<generator class="increment"></generator>
+		</id>
+		
+		
+		<property name="businessUnitId" column="BusinessUnitId"/>
+		<property name="buYear" column="Year"/>
+		<property name="metric1Name" column="Metric1Name"/>
+		<property name="metric1PlanValue" column="Metric1PlanValue"/>
+		<property name="metric2Name" column="Metric2Name"/>
+		<property name="metric2PlanValue" column="Mertic2PlanValue"/>
+		<property name="metric3Name" column="Metric3Name"/>
+		<property name="metric3PlanValue" column="Metric3PlanValue"/>
+		
+</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.strutsLogin.dto">
+	<class name="YearlyCalDTO" table="tmpElec">
+		<id name="empId" column="EmpId">
+			<generator class="increment"></generator>
+		</id>
+		
+		
+		<property name="empName" column="EmpName"/>
+		<property name="baseSalary" column="BaseSalary"/>
+		<property name="leverage" column="Leverage"/>
+		<property name="leveragePerc" column="LeveragePerc"/>
+		<property name="indPerf" column="INDPerf"/>
+		<property name="doj" column="DOJ"/>
+		<property name="oaipStartMonth" column="OAIPStartMonth"/>
+		<property name="oaipEndMonth" column="OAIPEndMonth"/>
+		<property name="noofMonths" column="NoofMonths"/>
+		<property name="multiplier" column="Multiplier"/>
+		<property name="oaip" column="OAIP"  />
+		
+		
+</class>
+
+ 
+</hibernate-mapping>
